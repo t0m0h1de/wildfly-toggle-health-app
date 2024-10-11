@@ -10,4 +10,4 @@ FROM quay.io/wildfly/wildfly:33.0.2.Final-jdk17
 
 COPY --from=builder /workspace/target/ROOT.war /opt/jboss/wildfly/standalone/deployments/
 
-ENTRYPOINT [ "/bin/sh", "-c", "/opt/jboss/wildfly/bin/standalone.sh" ]
+ENTRYPOINT [ "/bin/sh", "-c", "/opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0" ]
